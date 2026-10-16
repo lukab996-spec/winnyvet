@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/industry-5310827c-17e2-41b8-9ad2-11dea11de1e7/styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="_ds/industry-5310827c-17e2-41b8-9ad2-11dea11de1e7/_ds_bundle.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="./image-slot.js"></script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; }
+  :root {
+    --font-heading: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Mulish', ui-sans-serif, system-ui, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); }
+  body, p, li, a, span, button, input, textarea, figcaption, blockquote { font-family: var(--font-body); }
+  @keyframes wvFade { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @keyframes wvKenBurns { 0% { transform: scale(1); } 100% { transform: scale(1.14); } }
+  .wv-feature { border: 1px solid color-mix(in srgb, #ffffff 55%, transparent) !important; border-radius: 20px !important; background: color-mix(in srgb, #ffffff 42%, transparent) !important; backdrop-filter: blur(14px) saturate(140%); -webkit-backdrop-filter: blur(14px) saturate(140%); box-shadow: 0 10px 30px -12px color-mix(in srgb, var(--color-accent-900) 40%, transparent), inset 0 1px 0 color-mix(in srgb, #ffffff 60%, transparent); }
+  .wv-feature:hover { transform: translateY(-8px); border-color: var(--color-accent) !important; box-shadow: 0 22px 48px -14px color-mix(in srgb, var(--color-accent-900) 55%, transparent), inset 0 1px 0 color-mix(in srgb, #ffffff 70%, transparent); }
+  .corner { display: none !important; }
+  .wv-svc-cta i { transition: transform 0.25s ease; }
+  .wv-feature:hover .wv-svc-cta i { transform: translateX(4px); }
+  .wv-gal { position: relative; overflow: hidden; border-radius: 20px; border: 1px solid color-mix(in srgb, #ffffff 55%, transparent); box-shadow: 0 10px 28px -14px color-mix(in srgb, var(--color-accent-900) 45%, transparent); cursor: pointer; }
+  .wv-gal image-slot { width: 100%; height: 100%; display: block; transition: transform 0.5s cubic-bezier(.2,.7,.3,1); }
+  .wv-gal:hover image-slot { transform: scale(1.08); }
+  .wv-gal-ov { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center; padding: 16px; opacity: 0; transition: opacity 0.35s ease; background: linear-gradient(180deg, color-mix(in srgb, var(--color-accent-900) 10%, transparent), color-mix(in srgb, var(--color-accent-900) 60%, transparent)); }
+  .wv-gal:hover .wv-gal-ov { opacity: 1; }
+  .wv-gal-zoom { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 50%; color: #fff; background: color-mix(in srgb, #ffffff 22%, transparent); border: 1px solid color-mix(in srgb, #ffffff 55%, transparent); backdrop-filter: blur(6px); transform: scale(0.8); transition: transform 0.35s cubic-bezier(.2,.7,.3,1); }
+  .wv-gal:hover .wv-gal-zoom { transform: scale(1); }
+  .wv-gal-cap { color: #fff; font-family: var(--font-heading); font-weight: 600; font-size: 14px; letter-spacing: 0.02em; text-shadow: 0 1px 8px rgba(0,0,0,0.4); transform: translateY(6px); transition: transform 0.35s ease; }
+  .wv-gal:hover .wv-gal-cap { transform: none; }
+  .wv-reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease-out, transform 0.75s cubic-bezier(.2,.7,.3,1); will-change: opacity, transform; }
+  .wv-reveal.wv-l { transform: translateX(-44px); }
+  .wv-reveal.wv-r { transform: translateX(44px); }
+  .wv-reveal.wv-up { transform: translateY(-34px); }
+  .wv-reveal.wv-in { opacity: 1; transform: none; }
+  @media (max-width: 700px) { .wv-reveal, .wv-reveal.wv-l, .wv-reveal.wv-r, .wv-reveal.wv-up { transform: translateY(22px); } .wv-reveal.wv-in { transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .wv-reveal { opacity: 1 !important; transform: none !important; transition: none !important; } }
+</style>
+</helmet>
+
+<div style="font-family: var(--font-body); color: var(--color-text); background:
+  linear-gradient(var(--color-bg), var(--color-bg)),
+  repeating-linear-gradient(0deg, transparent 0 39px, color-mix(in srgb, var(--color-text) 3%, transparent) 39px 40px),
+  repeating-linear-gradient(90deg, transparent 0 39px, color-mix(in srgb, var(--color-text) 3%, transparent) 39px 40px);">
+
+  <!-- EMERGENCY STRIP -->
+  <div style="background: var(--color-accent-900); color: var(--color-bg);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 8px var(--space-6); display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 14px; font-size: 13px; text-align: center;">
+      <span style="display: inline-flex; align-items: center; gap: 7px; letter-spacing: 0.03em;">
+        <i data-lucide="siren" style="width: 16px; height: 16px;"></i>
+        Hitan slučaj sa ljubimcem? Zovite odmah - intervencije i van radnog vremena, po pozivu.
+      </span>
+      <a href="tel:+381628712784" style="display: inline-flex; align-items: center; gap: 6px; color: var(--color-bg); font-family: var(--font-heading); font-weight: 600; text-decoration: underline; text-underline-offset: 3px;">
+        <i data-lucide="phone-call" style="width: 15px; height: 15px;"></i> 062 871 2784
+      </a>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <header style="position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--color-bg) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--color-divider);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 10px var(--space-6); display: flex; align-items: center; gap: var(--space-6);">
+      <a href="#pocetna" onClick="{{ closeMenu }}" style="display: flex; align-items: center; gap: 10px; margin-right: auto; text-decoration: none; color: inherit;">
+        <img src="assets/logo.jpg" alt="Winny Vet logo" style="width: 48px; height: 48px; flex: none; border-radius: 50%; display: block;">
+        <span style="line-height: 1;">
+          <span style="display: block; font-family: var(--font-heading); font-weight: 600; font-size: 20px; letter-spacing: -0.01em;">Winny Vet</span>
+          <span style="display: block; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-700);">Veterinarska ambulanta · Niš</span>
+        </span>
+      </a>
+
+      <sc-if value="{{ desktop }}" hint-placeholder-val="{{ true }}">
+        <nav style="display: flex; align-items: center; gap: var(--space-6);">
+          <sc-for list="{{ navLinks }}" as="link" hint-placeholder-count="5">
+            <a href="{{ link.href }}" style="color: inherit; text-decoration: none; font-size: 14px; letter-spacing: 0.01em;">{{ link.label }}</a>
+          </sc-for>
+          <a class="btn btn-primary" href="tel:+381628712784" style="gap: 7px;">
+            <i data-lucide="phone" style="width: 15px; height: 15px;"></i> Zakaži pregled
+          </a>
+        </nav>
+      </sc-if>
+
+      <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+        <button class="btn btn-secondary btn-icon" aria-label="Meni" onClick="{{ toggleMenu }}">
+          <i data-lucide="menu" style="width: 20px; height: 20px;"></i>
+        </button>
+      </sc-if>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <nav style="border-top: 1px solid var(--color-divider); background: var(--color-bg); padding: var(--space-4) var(--space-6); display: flex; flex-direction: column; gap: 4px;">
+        <sc-for list="{{ navLinks }}" as="link" hint-placeholder-count="5">
+          <a href="{{ link.href }}" onClick="{{ closeMenu }}" style="color: inherit; text-decoration: none; font-size: 16px; padding: 10px 0; border-bottom: 1px solid var(--color-divider);">{{ link.label }}</a>
+        </sc-for>
+        <a class="btn btn-primary btn-block" href="tel:+381628712784" style="gap: 7px; margin-top: var(--space-3);">
+          <i data-lucide="phone" style="width: 16px; height: 16px;"></i> Pozovite: 062 871 2784
+        </a>
+      </nav>
+    </sc-if>
+  </header>
+
+  <!-- HERO -->
+  <section id="pocetna" style="scroll-margin-top: 80px; position: relative; width: 100%; min-height: 100svh; display: flex; align-items: center; overflow: hidden; isolation: isolate;">
+    <!-- background image with Ken Burns -->
+    <div style="position: absolute; inset: 0; z-index: -2; overflow: hidden;">
+      <div style="position: absolute; inset: 0; transform-origin: 60% 40%; animation: wvKenBurns 22s ease-in-out infinite alternate;">
+        <image-slot id="wv-hero" shape="rect" fit="cover" src="assets/hero.png" placeholder="Pozadinska fotografija - veterinar sa ljubimcem / enterijer (pejzažna, visoka rezolucija)"></image-slot>
+      </div>
+    </div>
+    <!-- dark gradient overlay -->
+    <div style="position: absolute; inset: 0; z-index: -1; pointer-events: none;
+      background:
+        linear-gradient(180deg, color-mix(in srgb, var(--color-accent-900) 72%, transparent) 0%, color-mix(in srgb, var(--color-accent-900) 28%, transparent) 42%, color-mix(in srgb, var(--color-accent-900) 86%, transparent) 100%),
+        linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.15) 55%, rgba(0,0,0,0) 100%);"></div>
+
+    <div style="position: relative; width: 100%; max-width: 1200px; margin: 0 auto; padding: clamp(96px, 16vh, 160px) var(--space-6) clamp(64px, 10vh, 120px); color: #fff; animation: wvFade 0.7s ease both;">
+      <div style="max-width: 760px;">
+        <span class="tag" style="background: color-mix(in srgb, #ffffff 16%, transparent); color: #fff; border: 1px solid color-mix(in srgb, #ffffff 45%, transparent); backdrop-filter: blur(4px); letter-spacing: 0.04em;">Veterinarska ambulanta · Niš</span>
+        <h1 style="color: #fff; font-size: clamp(40px, 7vw, 76px); line-height: 1.02; letter-spacing: -0.02em; margin: var(--space-4) 0 var(--space-4); text-wrap: balance; text-shadow: 0 2px 24px rgba(0,0,0,0.35);">Vrhunska briga za vašeg ljubimca, u srcu Niša.</h1>
+        <p style="font-size: clamp(16px, 2vw, 21px); line-height: 1.6; max-width: 56ch; color: color-mix(in srgb, #ffffff 90%, transparent); text-shadow: 0 1px 12px rgba(0,0,0,0.3);">Savremena dijagnostika, nežan pristup i tim koji vaše pse i mačke doživljava kao članove porodice - od redovnih pregleda do ultrazvuka i hirurgije.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-8);">
+          <a class="btn btn-primary" href="tel:+381628712784" style="gap: 9px; padding: 15px 28px; font-size: 16px;">
+            <i data-lucide="calendar-check" style="width: 18px; height: 18px;"></i> Zakaži pregled
+          </a>
+          <a class="btn" href="#kontakt" style="gap: 9px; padding: 15px 28px; font-size: 16px; color: #fff; border: 1px solid color-mix(in srgb, #ffffff 60%, transparent); background: color-mix(in srgb, #ffffff 10%, transparent); backdrop-filter: blur(4px);">
+            <i data-lucide="map-pin" style="width: 18px; height: 18px;"></i> Kontakt
+          </a>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: var(--space-4) var(--space-6); margin-top: clamp(28px, 5vh, 56px);">
+          <sc-for list="{{ heroStats }}" as="st" hint-placeholder-count="3">
+            <div style="display: flex; align-items: center; gap: 9px;">
+              <i data-lucide="{{ st.icon }}" style="width: 18px; height: 18px; color: #fff; stroke-width: 1.5;"></i>
+              <span style="font-size: 13px; line-height: 1.3; color: color-mix(in srgb, #ffffff 88%, transparent);">{{ st.label }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+    <!-- scroll hint -->
+    <a href="#usluge" aria-label="Skrolujte dole" style="position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%); z-index: 1; color: color-mix(in srgb, #ffffff 80%, transparent); display: grid; place-items: center;">
+      <i data-lucide="chevron-down" style="width: 26px; height: 26px; stroke-width: 1.5; animation: wvFade 1.2s ease-in-out infinite alternate;"></i>
+    </a>
+  </section>
+
+  <!-- WHY -->
+  <section style="position: relative; padding: clamp(28px, 5vw, 56px) var(--space-6); background:
+      radial-gradient(60% 80% at 12% 10%, color-mix(in srgb, var(--color-accent-300) 55%, transparent), transparent 60%),
+      radial-gradient(55% 75% at 92% 90%, color-mix(in srgb, var(--color-accent-200) 60%, transparent), transparent 60%),
+      var(--color-surface);">
+    <div style="max-width: 1200px; margin: 0 auto;">
+    <div style="max-width: 640px; margin-bottom: var(--space-8);">
+      <h6 style="color: var(--color-accent-700); margin-bottom: var(--space-2);">Zašto Winny Vet</h6>
+      <h2 style="font-size: clamp(28px, 3.5vw, 38px);">Poverenje koje vaš ljubimac zaslužuje</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: var(--space-4);">
+      <sc-for list="{{ features }}" as="f" hint-placeholder-count="4">
+        <div class="blueprint wv-feature wv-reveal wv-stagger" style="padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-3); background: color-mix(in srgb, var(--color-bg) 70%, transparent); box-shadow: var(--shadow-sm); transition: transform 0.28s cubic-bezier(.2,.7,.3,1), box-shadow 0.28s ease, border-color 0.28s ease;">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <span style="width: 56px; height: 56px; border-radius: 16px; display: grid; place-items: center; color: var(--color-accent-700); background: linear-gradient(145deg, color-mix(in srgb, #ffffff 60%, transparent), var(--color-accent-100)); border: 1px solid color-mix(in srgb, #ffffff 60%, transparent); box-shadow: inset 0 1px 0 color-mix(in srgb, #ffffff 70%, transparent);">
+            <i data-lucide="{{ f.icon }}" style="width: 26px; height: 26px; stroke-width: 1.5;"></i>
+          </span>
+          <h3 style="font-size: 20px; margin: var(--space-2) 0 0;">{{ f.title }}</h3>
+          <p style="margin: 0; font-size: 14px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 72%, transparent);">{{ f.body }}</p>
+        </div>
+      </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- USLUGE -->
+  <section id="usluge" style="scroll-margin-top: 80px; border-block: 1px solid var(--color-divider); background:
+      radial-gradient(55% 70% at 88% 8%, color-mix(in srgb, var(--color-accent-300) 50%, transparent), transparent 60%),
+      radial-gradient(50% 65% at 8% 92%, color-mix(in srgb, var(--color-accent-200) 55%, transparent), transparent 60%),
+      var(--color-surface);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: clamp(40px, 6vw, 72px) var(--space-6);">
+      <div style="max-width: 680px; margin-bottom: var(--space-8);">
+        <h6 style="color: var(--color-accent-700); margin-bottom: var(--space-2);">Usluge</h6>
+        <h2 style="font-size: clamp(28px, 3.5vw, 40px);">Kompletna veterinarska nega pod jednim krovom</h2>
+        <p style="font-size: 16px; color: color-mix(in srgb, var(--color-text) 75%, transparent); max-width: 56ch;">Od prvog pregleda do složenih zahvata - opremljeni smo i obučeni da se o vašem ljubimcu pobrinemo brzo, bezbedno i sa puno pažnje.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4);">
+        <sc-for list="{{ services }}" as="s" hint-placeholder-count="8">
+          <div class="wv-feature wv-reveal wv-stagger" style="padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-3);">
+            <div style="display: flex; align-items: center; gap: var(--space-3);">
+              <span style="display: grid; place-items: center; width: 52px; height: 52px; flex: none; border-radius: 16px; color: var(--color-accent-700); background: linear-gradient(145deg, color-mix(in srgb, #ffffff 60%, transparent), var(--color-accent-100)); border: 1px solid color-mix(in srgb, #ffffff 60%, transparent); box-shadow: inset 0 1px 0 color-mix(in srgb, #ffffff 70%, transparent);">
+                <i data-lucide="{{ s.icon }}" style="width: 26px; height: 26px; stroke-width: 1.5;"></i>
+              </span>
+              <h3 style="font-size: 19px; margin: 0; line-height: 1.1;">{{ s.title }}</h3>
+            </div>
+            <p style="margin: 0; font-size: 14px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 72%, transparent);">{{ s.body }}</p>
+            <a class="wv-svc-cta" href="tel:+381628712784" style="margin-top: auto; padding-top: var(--space-2); display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-heading); font-weight: 600; font-size: 14px; color: var(--color-accent-700); text-decoration: none;">
+              Zakaži pregled <i data-lucide="arrow-right" style="width: 15px; height: 15px; stroke-width: 2;"></i>
+            </a>
+          </div>
+        </sc-for>
+      </div>
+      <p style="margin-top: var(--space-6); font-size: 14px; color: color-mix(in srgb, var(--color-text) 70%, transparent);">Niste sigurni šta je vašem ljubimcu potrebno? <a href="tel:+381628712784" style="font-family: var(--font-heading); font-weight: 600;">Pozovite nas</a> - rado savetujemo.</p>
+    </div>
+  </section>
+
+  <!-- O NAMA -->
+  <section id="o-nama" style="scroll-margin-top: 80px; position: relative; padding: clamp(40px, 6vw, 72px) var(--space-6); background:
+      radial-gradient(55% 70% at 10% 8%, color-mix(in srgb, var(--color-accent-300) 50%, transparent), transparent 60%),
+      radial-gradient(50% 65% at 92% 95%, color-mix(in srgb, var(--color-accent-200) 55%, transparent), transparent 60%),
+      var(--color-bg);">
+    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(28px, 5vw, 56px); align-items: center;">
+      <figure class="wv-reveal wv-l" style="margin: 0; aspect-ratio: 4/5; border-radius: 24px; overflow: hidden; border: 1px solid color-mix(in srgb, #ffffff 60%, transparent); box-shadow: 0 24px 60px -22px color-mix(in srgb, var(--color-accent-900) 55%, transparent);">
+        <image-slot id="wv-about" shape="rect" fit="cover" src="assets/o-nama.jpg" placeholder="Fotografija enterijera ambulante ili tima"></image-slot>
+      </figure>
+
+      <div class="wv-glass-panel wv-reveal wv-r" style="padding: clamp(24px, 3vw, 40px); border-radius: 24px; border: 1px solid color-mix(in srgb, #ffffff 55%, transparent); background: color-mix(in srgb, #ffffff 42%, transparent); backdrop-filter: blur(14px) saturate(140%); -webkit-backdrop-filter: blur(14px) saturate(140%); box-shadow: 0 10px 30px -12px color-mix(in srgb, var(--color-accent-900) 35%, transparent), inset 0 1px 0 color-mix(in srgb, #ffffff 60%, transparent);">
+        <h6 style="color: var(--color-accent-700); margin-bottom: var(--space-2);">O nama</h6>
+        <h2 style="font-size: clamp(28px, 3.5vw, 38px); margin-bottom: var(--space-4);">Naša priča počinje ljubavlju prema životinjama</h2>
+        <p style="font-size: 16px; line-height: 1.65; color: color-mix(in srgb, var(--color-text) 82%, transparent);">Winny Vet je nastao iz jednostavne ideje: da Niš dobije ambulantu u kojoj se svaki ljubimac tretira sa pažnjom, strpljenjem i vrhunskom stručnošću. Godinama uz vas, izgradili smo poverenje nišlijskih porodica staloženim pristupom, iskrenim savetima i brigom koja ne prestaje kada izađete iz ordinacije.</p>
+        <p style="font-size: 16px; line-height: 1.65; color: color-mix(in srgb, var(--color-text) 82%, transparent);">Ulažemo u savremenu opremu i stalno usavršavanje jer verujemo da vaši ljubimci zaslužuju negu na nivou najboljih svetskih praksi - ali toplu i ljudsku, kakvu samo lokalna ambulanta može da pruži.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: var(--space-3); margin-top: var(--space-6);">
+          <sc-for list="{{ aboutStats }}" as="a" hint-placeholder-count="3">
+            <div style="padding: var(--space-4); border-radius: 16px; background: color-mix(in srgb, #ffffff 50%, transparent); border: 1px solid color-mix(in srgb, #ffffff 55%, transparent); box-shadow: inset 0 1px 0 color-mix(in srgb, #ffffff 65%, transparent);">
+              <div style="font-family: var(--font-heading); font-weight: 600; font-size: 30px; color: var(--color-accent-700); line-height: 1;">{{ a.num }}</div>
+              <div style="font-size: 12px; margin-top: 6px; line-height: 1.35; color: color-mix(in srgb, var(--color-text) 72%, transparent);">{{ a.label }}</div>
+            </div>
+          </sc-for>
+        </div>
+
+        <a href="tel:+381628712784" style="margin-top: var(--space-6); display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-heading); font-weight: 600; font-size: 15px; color: var(--color-accent-700); text-decoration: none;">
+          Zakaži pregled <i data-lucide="arrow-right" style="width: 16px; height: 16px; stroke-width: 2;"></i>
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- GALERIJA -->
+  <section id="galerija" style="scroll-margin-top: 80px; border-block: 1px solid var(--color-divider); background:
+      radial-gradient(55% 70% at 90% 6%, color-mix(in srgb, var(--color-accent-300) 48%, transparent), transparent 60%),
+      radial-gradient(50% 65% at 6% 96%, color-mix(in srgb, var(--color-accent-200) 55%, transparent), transparent 60%),
+      var(--color-surface);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: clamp(40px, 6vw, 72px) var(--space-6);">
+      <div style="max-width: 640px; margin-bottom: var(--space-8);">
+        <h6 style="color: var(--color-accent-700); margin-bottom: var(--space-2);">Galerija</h6>
+        <h2 style="font-size: clamp(28px, 3.5vw, 38px);">Zavirite u Winny Vet</h2>
+        <p style="font-size: 16px; color: color-mix(in srgb, var(--color-text) 75%, transparent);">Naš prostor, oprema i - najvažnije - srećni ljubimci koji nam se vraćaju sa osmehom (i mahanjem repa).</p>
+      </div>
+
+      <h4 style="font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: var(--space-4);">Prostor i oprema</h4>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-4); margin-bottom: var(--space-8);">
+        <sc-for list="{{ gallerySpace }}" as="g" hint-placeholder-count="3">
+          <figure class="wv-gal wv-reveal" style="margin: 0; aspect-ratio: 4/3;">
+            <image-slot id="{{ g.slot }}" shape="rect" fit="cover" src="{{ g.src }}" placeholder="{{ g.label }}"></image-slot>
+            <span class="wv-gal-ov">
+              <span class="wv-gal-zoom"><i data-lucide="zoom-in" style="width: 20px; height: 20px; stroke-width: 1.5;"></i></span>
+              <span class="wv-gal-cap">{{ g.label }}</span>
+            </span>
+          </figure>
+        </sc-for>
+      </div>
+
+      <h4 style="font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: var(--space-4);">Srećni pacijenti</h4>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: var(--space-4);">
+        <sc-for list="{{ galleryPets }}" as="g" hint-placeholder-count="3">
+          <figure class="wv-gal wv-reveal" style="margin: 0; aspect-ratio: 1/1;">
+            <image-slot id="{{ g.slot }}" shape="rect" fit="cover" src="{{ g.src }}" placeholder="{{ g.label }}"></image-slot>
+            <span class="wv-gal-ov">
+              <span class="wv-gal-zoom"><i data-lucide="zoom-in" style="width: 20px; height: 20px; stroke-width: 1.5;"></i></span>
+              <span class="wv-gal-cap">{{ g.label }}</span>
+            </span>
+          </figure>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- UTISCI -->
+  <section style="position: relative; padding: clamp(40px, 6vw, 72px) var(--space-6); background:
+      radial-gradient(55% 70% at 8% 6%, color-mix(in srgb, var(--color-accent-300) 48%, transparent), transparent 60%),
+      radial-gradient(50% 65% at 94% 96%, color-mix(in srgb, var(--color-accent-200) 55%, transparent), transparent 60%),
+      var(--color-bg);">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <div style="max-width: 640px; margin-bottom: var(--space-6);">
+        <h6 style="color: var(--color-accent-700); margin-bottom: var(--space-2);">Utisci korisnika</h6>
+        <h2 style="font-size: clamp(28px, 3.5vw, 38px);">Šta kažu vlasnici iz Niša</h2>
+      </div>
+
+      <!-- RATING HEADER -->
+      <div class="wv-glass-panel" style="display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-4) clamp(24px, 4vw, 48px); padding: clamp(20px, 2.5vw, 28px) clamp(24px, 3vw, 36px); border-radius: 20px; border: 1px solid color-mix(in srgb, #ffffff 55%, transparent); background: color-mix(in srgb, #ffffff 45%, transparent); backdrop-filter: blur(14px) saturate(140%); -webkit-backdrop-filter: blur(14px) saturate(140%); box-shadow: 0 10px 30px -12px color-mix(in srgb, var(--color-accent-900) 32%, transparent), inset 0 1px 0 color-mix(in srgb, #ffffff 60%, transparent); margin-bottom: var(--space-6);">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          {{ googleG }}
+          <div style="line-height: 1.1;">
+            <div style="font-family: var(--font-heading); font-weight: 600; font-size: 16px;">Google recenzije</div>
+            <div style="font-size: 13px; color: color-mix(in srgb, var(--color-text) 65%, transparent);">Zadovoljni vlasnici ljubimaca</div>
+          </div>
+        </div>
+        <div style="width: 1px; align-self: stretch; background: color-mix(in srgb, var(--color-text) 12%, transparent);"></div>
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <div style="font-family: var(--font-heading); font-weight: 700; font-size: 44px; line-height: 1; color: var(--color-accent-700);">5.0</div>
+          <div>
+            <div style="display: flex; gap: 2px; color: #f4b400;">{{ bigStars }}</div>
+            <div style="font-size: 12px; color: color-mix(in srgb, var(--color-text) 60%, transparent); margin-top: 4px;">Na osnovu Google recenzija</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REVIEW CARDS -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-4);">
+        <sc-for list="{{ reviews }}" as="t" hint-placeholder-count="3">
+          <figure class="wv-feature wv-reveal wv-stagger" style="padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-4); margin: 0;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span style="width: 44px; height: 44px; flex: none; border-radius: 50%; display: grid; place-items: center; color: #fff; font-family: var(--font-heading); font-weight: 600; font-size: 18px; background: {{ t.color }};">{{ t.initial }}</span>
+              <div style="line-height: 1.15; min-width: 0;">
+                <div style="font-family: var(--font-heading); font-weight: 600; font-size: 15px;">{{ t.name }}</div>
+                <div style="font-size: 12px; color: color-mix(in srgb, var(--color-text) 58%, transparent);">{{ t.when }}</div>
+              </div>
+              <span style="margin-left: auto; flex: none;">{{ googleGSmall }}</span>
+            </div>
+            <div style="display: flex; gap: 2px; color: #f4b400;">{{ cardStars }}</div>
+            <blockquote style="margin: 0; font-size: 15px; line-height: 1.6; color: color-mix(in srgb, var(--color-text) 82%, transparent);">{{ t.quote }}</blockquote>
+          </figure>
+        </sc-for>
+      </div>
+
+      <div style="display: flex; justify-content: center; margin-top: var(--space-8);">
+        <a class="btn btn-secondary" href="{{ googleUrl }}" target="_blank" rel="noopener" style="gap: 9px; padding: 13px 24px; font-size: 15px;">
+          {{ googleGSmall }} Pogledajte sve recenzije na Google-u
+          <i data-lucide="external-link" style="width: 15px; height: 15px; stroke-width: 1.5;"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="kontakt" style="scroll-margin-top: 80px; background: var(--color-accent-900); color: var(--color-bg);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: clamp(40px, 6vw, 72px) var(--space-6);">
+      <div style="display: flex; flex-wrap: wrap; gap: clamp(32px, 5vw, 64px);">
+        <div style="flex: 1 1 320px; min-width: 300px;">
+          <h6 style="color: var(--color-accent-300); margin-bottom: var(--space-2);">Kontakt i zakazivanje</h6>
+          <h2 style="font-size: clamp(30px, 4vw, 44px); color: var(--color-bg); margin-bottom: var(--space-4);">Zakažite pregled - jedan poziv je dovoljan</h2>
+          <p style="font-size: 16px; line-height: 1.6; color: color-mix(in srgb, #ffffff 82%, transparent); max-width: 50ch;">Termine zakazujemo telefonom kako bismo vam našli vreme koje vam najviše odgovara. Pozovite nas i rado ćemo odgovoriti na sva pitanja.</p>
+
+          <a class="btn" href="tel:+381628712784" style="background: var(--color-bg); color: var(--color-accent-900); border-color: var(--color-bg); gap: 9px; padding: 14px 24px; font-size: 16px; margin: var(--space-6) 0 var(--space-4);">
+            <i data-lucide="phone-call" style="width: 18px; height: 18px;"></i> 062 871 2784
+          </a>
+
+          <div style="display: flex; flex-direction: column; gap: var(--space-4); margin-top: var(--space-4);">
+            <div style="display: flex; align-items: flex-start; gap: 12px;">
+              <i data-lucide="phone" style="width: 19px; height: 19px; color: var(--color-accent-300); stroke-width: 1.5; margin-top: 2px;"></i>
+              <div style="font-size: 15px;">
+                <div style="color: var(--color-accent-300); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;">Telefon</div>
+                <span style="display: inline-flex; flex-wrap: wrap; gap: 4px 10px;">
+                  <a href="tel:+381628712784" style="color: var(--color-bg); text-decoration: none;">062 871 2784</a>
+                  <a href="tel:+38118390368" style="color: var(--color-bg); text-decoration: none;">018 390 368</a>
+                </span>
+              </div>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 12px;">
+              <i data-lucide="map-pin" style="width: 19px; height: 19px; color: var(--color-accent-300); stroke-width: 1.5; margin-top: 2px;"></i>
+              <div style="font-size: 15px;">
+                <div style="color: var(--color-accent-300); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;">Adresa</div>
+                Todora Milovanovića 8, 18000 Niš
+              </div>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 12px;">
+              <i data-lucide="clock" style="width: 19px; height: 19px; color: var(--color-accent-300); stroke-width: 1.5; margin-top: 2px;"></i>
+              <div style="font-size: 15px;">
+                <div style="color: var(--color-accent-300); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;">Radno vreme</div>
+                Ponedeljak–Petak: 10–20h<br>Subota: 10–13h<br>Nedelja: zatvoreno (hitni slučajevi po pozivu)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="flex: 1 1 320px; min-width: 300px;">
+          <figure class="blueprint" style="aspect-ratio: 4/3; margin: 0; border-color: color-mix(in srgb, #ffffff 25%, transparent);">
+            <i class="corner tl" style="color: color-mix(in srgb, #ffffff 55%, transparent);"></i>
+            <i class="corner tr" style="color: color-mix(in srgb, #ffffff 55%, transparent);"></i>
+            <i class="corner bl" style="color: color-mix(in srgb, #ffffff 55%, transparent);"></i>
+            <i class="corner br" style="color: color-mix(in srgb, #ffffff 55%, transparent);"></i>
+            <iframe title="Mapa - Winny Vet, Todora Milovanovića 8, Niš" src="https://www.google.com/maps?q=Todora+Milovanovi%C4%87a+8,+Ni%C5%A1&output=embed" style="width: 100%; height: 100%; border: 0; display: block;" loading="lazy"></iframe>
+          </figure>
+          <p style="font-size: 13px; color: color-mix(in srgb, #ffffff 70%, transparent); margin-top: var(--space-3); display: flex; align-items: center; gap: 7px;">
+            <i data-lucide="car" style="width: 15px; height: 15px; stroke-width: 1.5;"></i> Lako dostupno, sa parkingom u blizini.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="border-top: 1px solid var(--color-divider);">
+    <div style="max-width: 1200px; margin: 0 auto; padding: var(--space-8) var(--space-6); display: flex; flex-wrap: wrap; gap: var(--space-6); align-items: center; justify-content: space-between;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <img src="assets/logo.jpg" alt="Winny Vet logo" style="width: 44px; height: 44px; flex: none; border-radius: 50%; display: block;">
+        <span style="font-family: var(--font-heading); font-weight: 600; font-size: 18px;">Winny Vet</span>
+        <span style="font-size: 13px; color: color-mix(in srgb, var(--color-text) 55%, transparent);">· Veterinarska ambulanta, Niš</span>
+      </div>
+      <div style="font-size: 13px; color: color-mix(in srgb, var(--color-text) 60%, transparent);">© 2026 Winny Vet. Sva prava zadržana.</div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <sc-if value="{{ lightbox }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeLightbox }}" style="position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: clamp(16px, 4vw, 48px); background: color-mix(in srgb, var(--color-accent-900) 82%, transparent); backdrop-filter: blur(10px); animation: wvFade 0.25s ease both;">
+      <button aria-label="Zatvori" onClick="{{ closeLightbox }}" style="position: absolute; top: 18px; right: 18px; width: 46px; height: 46px; display: grid; place-items: center; border: 1px solid color-mix(in srgb, #ffffff 45%, transparent); background: color-mix(in srgb, #ffffff 15%, transparent); color: #fff; border-radius: 50%; cursor: pointer; backdrop-filter: blur(6px);">
+        <i data-lucide="x" style="width: 22px; height: 22px; stroke-width: 1.5;"></i>
+      </button>
+      <figure style="margin: 0; max-width: 1000px; max-height: 85vh; display: flex; flex-direction: column; gap: 14px; align-items: center;">
+        {{ lightboxImg }}
+        <sc-if value="{{ lightboxCap }}" hint-placeholder-val="{{ false }}">
+          <figcaption style="color: #fff; font-family: var(--font-heading); font-weight: 600; font-size: 15px; letter-spacing: 0.02em;">{{ lightboxCap }}</figcaption>
+        </sc-if>
+      </figure>
+    </div>
+  </sc-if>
+
+  <!-- FLOATING ACTIONS -->
+  <div style="position: fixed; right: 18px; bottom: 18px; z-index: 60; display: flex; flex-direction: column; gap: 12px;">
+    <sc-if value="{{ showTop }}" hint-placeholder-val="{{ false }}">
+      <button aria-label="Vrati na vrh" onClick="{{ scrollTop }}" style="width: 52px; height: 52px; display: grid; place-items: center; border-radius: 50%; cursor: pointer; color: var(--color-accent-700); background: color-mix(in srgb, #ffffff 55%, transparent); border: 1px solid color-mix(in srgb, #ffffff 60%, transparent); backdrop-filter: blur(10px) saturate(140%); -webkit-backdrop-filter: blur(10px) saturate(140%); box-shadow: 0 8px 24px -8px color-mix(in srgb, var(--color-accent-900) 45%, transparent);">
+        <i data-lucide="arrow-up" style="width: 22px; height: 22px; stroke-width: 1.5;"></i>
+      </button>
+    </sc-if>
+    <a href="tel:+381628712784" aria-label="Pozovite Winny Vet" style="width: 56px; height: 56px; display: grid; place-items: center; border-radius: 50%; color: #fff; background: var(--color-accent); border: 1px solid var(--color-accent-700); box-shadow: 0 10px 28px -8px color-mix(in srgb, var(--color-accent-900) 60%, transparent); text-decoration: none;">
+      <i data-lucide="phone-call" style="width: 24px; height: 24px; stroke-width: 1.5;"></i>
+    </a>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:1400}}">
+class Component extends DCLogic {
+  state = {
+    menuOpen: false,
+    isMobile: typeof window !== 'undefined' ? window.innerWidth < 880 : false,
+    lightbox: null,
+    lightboxCap: null,
+    showTop: false,
+  };
+
+  componentDidMount() {
+    this._onResize = () => {
+      const m = window.innerWidth < 880;
+      if (m !== this.state.isMobile) this.setState({ isMobile: m, menuOpen: false });
+    };
+    window.addEventListener('resize', this._onResize);
+
+    this._onGalClick = (e) => {
+      const fig = e.target.closest('.wv-gal');
+      if (!fig) return;
+      const slot = fig.querySelector('image-slot');
+      let src = null;
+      try {
+        const img = slot && slot.shadowRoot && slot.shadowRoot.querySelector('img[part="image"]');
+        if (img && img.src && img.getAttribute('style') && !/display:\s*none/.test(img.getAttribute('style'))) src = img.src;
+        if (!src && img && img.src && img.naturalWidth) src = img.src;
+      } catch (err) {}
+      if (!src) return; // nothing dropped yet
+      const cap = fig.querySelector('.wv-gal-cap');
+      this.setState({ lightbox: src, lightboxCap: cap ? cap.textContent : null });
+    };
+    this._root = document.querySelector('#dc-root') || document;
+    this._root.addEventListener('click', this._onGalClick);
+
+    this._onKey = (e) => { if (e.key === 'Escape') this.setState({ lightbox: null, lightboxCap: null }); };
+    window.addEventListener('keydown', this._onKey);
+
+    this._onScroll = () => {
+      const show = window.scrollY > 500;
+      if (show !== this.state.showTop) this.setState({ showTop: show });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+
+    this._setupReveal();
+
+    this._icons();
+  }
+  componentDidUpdate() { this._icons(); }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this._onResize);
+    if (this._root) this._root.removeEventListener('click', this._onGalClick);
+    window.removeEventListener('keydown', this._onKey);
+    window.removeEventListener('scroll', this._onScroll);
+    if (this._io) this._io.disconnect();
+  }
+
+  _setupReveal() {
+    const root = document.querySelector('#dc-root') || document;
+    const els = Array.from(root.querySelectorAll('.wv-reveal'));
+    if (!els.length) return;
+    if (!('IntersectionObserver' in window)) { els.forEach(el => el.classList.add('wv-in')); return; }
+
+    els.forEach((el) => {
+      const sibs = Array.from(el.parentElement.children).filter(c => c.classList.contains('wv-reveal'));
+      const idx = Math.max(0, sibs.indexOf(el));
+      el.style.transitionDelay = Math.min(idx, 5) * 110 + 'ms';
+      if (el.classList.contains('wv-stagger') && !el.classList.contains('wv-l') && !el.classList.contains('wv-r') && !el.classList.contains('wv-up')) {
+        const m = idx % 3;
+        el.classList.add(m === 0 ? 'wv-l' : m === 2 ? 'wv-r' : 'wv-up');
+      }
+    });
+
+    if (this._io) this._io.disconnect();
+    this._io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add('wv-in'); this._io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    els.forEach((el) => this._io.observe(el));
+  }
+
+  _icons() {
+    if (window.lucide && window.lucide.createIcons) {
+      try { window.lucide.createIcons(); } catch (e) {}
+    }
+  }
+
+  renderVals() {
+    return {
+      isMobile: this.state.isMobile,
+      desktop: !this.state.isMobile,
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      lightbox: this.state.lightbox,
+      lightboxCap: this.state.lightboxCap,
+      lightboxImg: this.state.lightbox
+        ? React.createElement('img', { src: this.state.lightbox, alt: '', style: { maxWidth: '100%', maxHeight: '78vh', objectFit: 'contain', borderRadius: '16px', boxShadow: '0 30px 80px -24px rgba(0,0,0,0.7)' } })
+        : null,
+      closeLightbox: () => this.setState({ lightbox: null, lightboxCap: null }),
+      showTop: this.state.showTop,
+      scrollTop: () => window.scrollTo({ top: 0, behavior: 'smooth' }),
+
+      navLinks: [
+        { href: '#pocetna', label: 'Početna' },
+        { href: '#usluge', label: 'Usluge' },
+        { href: '#o-nama', label: 'O nama' },
+        { href: '#galerija', label: 'Galerija' },
+        { href: '#kontakt', label: 'Kontakt' },
+      ],
+
+      heroStats: [
+        { icon: 'heart-handshake', label: 'Nežan pristup' },
+        { icon: 'activity', label: 'Ultrazvučna dijagnostika' },
+        { icon: 'map-pin', label: 'U centru Niša' },
+      ],
+
+      features: [
+        { icon: 'heart', title: 'Topao, ljudski pristup', body: 'Vreme, strpljenje i pažnja za svakog pacijenta - i za vas kao vlasnika. Bez žurbe i bez stresa.' },
+        { icon: 'microscope', title: 'Savremena oprema', body: 'Ultrazvuk, laboratorija i dijagnostika na licu mesta - bržа i tačnija dijagnoza, bez odlaganja.' },
+        { icon: 'stethoscope', title: 'Iskusan tim', body: 'Veterinari posvećeni stalnom usavršavanju, sa znanjem na nivou najboljih svetskih praksi.' },
+        { icon: 'phone-call', title: 'Uvek dostupni', body: 'Jasno radno vreme i hitne intervencije po pozivu - tu smo kada vašem ljubimcu zatreba.' },
+      ],
+
+      services: [
+        { icon: 'stethoscope', title: 'Klinički pregled', body: 'Temeljan opšti pregled i procena zdravlja uz jasan plan dalje nege.' },
+        { icon: 'syringe', title: 'Vakcinacije', body: 'Redovna i obavezna vakcinacija pasa i mačaka, sa podsetnikom za sledeći termin.' },
+        { icon: 'scan-line', title: 'Obeležavanje mikročipom', body: 'Bezbolno čipovanje i registracija - sigurnost da se ljubimac uvek vrati kući.' },
+        { icon: 'activity', title: 'Ultrazvučna dijagnostika', body: 'Precizan uvid u stanje organa i rano otkrivanje problema, bez bola.' },
+        { icon: 'scissors', title: 'Hirurgija', body: 'Rutinski i složeniji zahvati u bezbednim, kontrolisanim uslovima.' },
+        { icon: 'flask-conical', title: 'Laboratorijska dijagnostika', body: 'Analize krvi i uzoraka na licu mesta - rezultati brzo, dijagnoza tačno.' },
+        { icon: 'sparkles', title: 'Ultrazvučno skidanje kamenca', body: 'Nega zuba i uklanjanje kamenca ultrazvukom za zdrave desni i svež dah.' },
+        { icon: 'dna', title: 'Inseminacija', body: 'Stručna podrška u reprodukciji uz praćenje i savetovanje vlasnika.' },
+      ],
+
+      aboutStats: [
+        { num: '5+', label: 'godina iskustva' },
+        { num: '500+', label: 'zbrinutih ljubimaca' },
+        { num: '24/7', label: 'spremnost za hitne slučajeve, po pozivu' },
+      ],
+
+      team: [
+        { slot: 'wv-team-1', photo: 'Fotografija veterinara', name: 'dr vet. med.', role: 'Veterinar / osnivač', bio: 'Vodi tim sa fokusom na dijagnostiku i hirurgiju i na miran, poverljiv odnos sa svakim pacijentom.' },
+        { slot: 'wv-team-2', photo: 'Fotografija veterinara', name: 'dr vet. med.', role: 'Veterinar', bio: 'Specijalnost u internoj medicini i ultrazvučnoj dijagnostici pasa i mačaka.' },
+        { slot: 'wv-team-3', photo: 'Fotografija tehničara', name: 'Veterinarski tehničar', role: 'Nega i podrška', bio: 'Brine o udobnosti pacijenata i vodi vas kroz svaki korak posete.' },
+      ],
+
+      gallerySpace: [
+        { slot: 'wv-g-space-1', src: 'assets/oprema-1.jpg', label: 'Veterinarski ultrazvuk' },
+        { slot: 'wv-g-space-2', src: 'assets/oprema-2.jpg', label: 'Biohemijski analizator' },
+        { slot: 'wv-g-space-3', src: 'assets/oprema-3.jpg', label: 'Hematološki analizator' },
+        { slot: 'wv-g-space-4', src: 'assets/oprema-4.jpg', label: 'Laboratorijski mikroskop' },
+      ],
+      galleryPets: [
+        { slot: 'wv-g-pet-1', src: 'assets/pacijent-1.jpg', label: 'Nežan pregled' },
+        { slot: 'wv-g-pet-2', src: 'assets/pacijent-2.webp', label: 'Pod našom negom' },
+        { slot: 'wv-g-pet-3', src: 'assets/pacijent-3.webp', label: 'Oporavak nakon zahvata' },
+      ],
+
+      reviews: [
+        { initial: 'I', color: '#1a9d53', name: 'Isidora Stojanović', when: 'pre 4 meseca', quote: 'Hvala Dušanu koji nam je izašao u susret i otvorio kliniku sat vremena nakon zatvaranja! Sa velikim trudim je uspeo da izvuče popino prase koje se zavuklo skoro do bubne opne… Preporuke!' },
+        { initial: 'N', color: '#6d4fc4', name: 'Nevena Zivkovic', when: 'pre 8 meseci', quote: 'Najveća preporuka za Dušana. Divno iskustvo svaki put kada dođemo. Veterinar je izuzetno pažljiv, strpljiv i vidi se da zaista voli životinje. Sve objasni jasno i uliva poverenje, što mi je kao vlasniku jako važno. Moji psi se osećaju sigurno, a meni je to najveći znak da smo na pravom mestu.' },
+        { initial: 'M', color: '#e0457b', name: 'Marija Tasić', when: 'pre godinu dana', quote: 'Odlican veterinar Dušan - stručan i neverovatno posvećen. Na preporuku sam došla kod njega jer sam umalo ostala bez moje Lusi greškom prethodnog veterinara! On je to ispravio, operisao je i spasio joj život ❤️ Ispratio je oporavak u potpunosti bez prepuštanja slučaju i najmanje sitnice! Prezahvalna sam za sve što je uradio za Lusi, moja preporuka od srca 🐾' },
+      ],
+
+      googleUrl: 'https://www.google.com/search?q=Winny+Vet+Ni%C5%A1',
+
+      googleG: React.createElement('svg', { width: 34, height: 34, viewBox: '0 0 48 48' },
+        React.createElement('path', { fill: '#4285F4', d: 'M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z' }),
+        React.createElement('path', { fill: '#34A853', d: 'M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z' }),
+        React.createElement('path', { fill: '#FBBC05', d: 'M11.69 28.18c-.44-1.32-.69-2.73-.69-4.18s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z' }),
+        React.createElement('path', { fill: '#EA4335', d: 'M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z' })
+      ),
+      googleGSmall: React.createElement('svg', { width: 18, height: 18, viewBox: '0 0 48 48', style: { display: 'block' } },
+        React.createElement('path', { fill: '#4285F4', d: 'M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z' }),
+        React.createElement('path', { fill: '#34A853', d: 'M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z' }),
+        React.createElement('path', { fill: '#FBBC05', d: 'M11.69 28.18c-.44-1.32-.69-2.73-.69-4.18s.25-2.86.69-4.18v-5.7H4.34C2.85 17.09 2 20.45 2 24s.85 6.91 2.34 9.88l7.35-5.7z' }),
+        React.createElement('path', { fill: '#EA4335', d: 'M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z' })
+      ),
+      bigStars: this._stars(22),
+      cardStars: this._stars(16),
+    };
+  }
+
+  _stars(size) {
+    const star = 'M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z';
+    return [0,1,2,3,4].map((i) => React.createElement('svg', { key: i, width: size, height: size, viewBox: '0 0 24 24', fill: 'currentColor' },
+      React.createElement('path', { d: star })));
+  }
+}
+</script>
+</body>
+</html>
