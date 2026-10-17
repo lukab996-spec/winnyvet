@@ -219,16 +219,28 @@
       radial-gradient(55% 70% at 10% 8%, color-mix(in srgb, var(--color-accent-300) 50%, transparent), transparent 60%),
       radial-gradient(50% 65% at 92% 95%, color-mix(in srgb, var(--color-accent-200) 55%, transparent), transparent 60%),
       var(--color-bg);">
-    <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: clamp(28px, 5vw, 56px); align-items: center;">
-      <figure class="wv-reveal wv-l" style="margin: 0; aspect-ratio: 4/5; border-radius: 24px; overflow: hidden; border: 1px solid color-mix(in srgb, #ffffff 60%, transparent); box-shadow: 0 24px 60px -22px color-mix(in srgb, var(--color-accent-900) 55%, transparent);">
-        <image-slot id="wv-about" shape="rect" fit="cover" src="assets/o-nama.jpg" placeholder="Fotografija enterijera ambulante ili tima"></image-slot>
-      </figure>
-
+    <div style="max-width: 1200px; margin: 0 auto;">
       <div class="wv-glass-panel wv-reveal wv-r" style="padding: clamp(24px, 3vw, 40px); border-radius: 24px; border: 1px solid color-mix(in srgb, #ffffff 55%, transparent); background: color-mix(in srgb, #ffffff 42%, transparent); backdrop-filter: blur(14px) saturate(140%); -webkit-backdrop-filter: blur(14px) saturate(140%); box-shadow: 0 10px 30px -12px color-mix(in srgb, var(--color-accent-900) 35%, transparent), inset 0 1px 0 color-mix(in srgb, #ffffff 60%, transparent);">
+        <figure class="wv-reveal wv-l" style="float: left; width: min(42%, 420px); margin: 6px clamp(24px, 3vw, 36px) 20px 0; aspect-ratio: 4/5; border-radius: 18px; overflow: hidden; border: 1px solid color-mix(in srgb, #ffffff 60%, transparent); box-shadow: 0 20px 48px -22px color-mix(in srgb, var(--color-accent-900) 55%, transparent); shape-outside: inset(0 round 18px);">
+          <image-slot id="wv-about" shape="rect" fit="cover" src="assets/o-nama.jpg" placeholder="Fotografija enterijera ambulante ili tima"></image-slot>
+        </figure>
         <h6 style="color: var(--color-accent-700); margin-bottom: var(--space-2);">O nama</h6>
-        <h2 style="font-size: clamp(28px, 3.5vw, 38px); margin-bottom: var(--space-4);">Naša priča počinje ljubavlju prema životinjama</h2>
-        <p style="font-size: 16px; line-height: 1.65; color: color-mix(in srgb, var(--color-text) 82%, transparent);">Winny Vet je nastao iz jednostavne ideje: da Niš dobije ambulantu u kojoj se svaki ljubimac tretira sa pažnjom, strpljenjem i vrhunskom stručnošću. Godinama uz vas, izgradili smo poverenje nišlijskih porodica staloženim pristupom, iskrenim savetima i brigom koja ne prestaje kada izađete iz ordinacije.</p>
-        <p style="font-size: 16px; line-height: 1.65; color: color-mix(in srgb, var(--color-text) 82%, transparent);">Ulažemo u savremenu opremu i stalno usavršavanje jer verujemo da vaši ljubimci zaslužuju negu na nivou najboljih svetskih praksi - ali toplu i ljudsku, kakvu samo lokalna ambulanta može da pruži.</p>
+        <h2 style="font-size: clamp(28px, 3.5vw, 38px); margin-bottom: var(--space-4);">Savremena nega malih životinja, sa ljudskim pristupom</h2>
+        <p style="font-size: 16px; line-height: 1.65; color: color-mix(in srgb, var(--color-text) 82%, transparent);">Veterinarska ambulanta WINNY VET pruža visokokvalitetnu veterinarsku zaštitu malih životinja u skladu sa savremenim standardima veterinarske medicine. Naša misija je da osiguramo pravovremenu, stručnu i humanu medicinsku negu svakom pacijentu.</p>
+        <p style="font-size: 16px; line-height: 1.65; color: color-mix(in srgb, var(--color-text) 82%, transparent);">Ambulantu vodi dr Dušan Todorović, veterinar koji poseduje bogato kliničko iskustvo u oblasti interne medicine, hirurgije i dijagnostike malih životinja. Kroz kontinuiranu stručnu edukaciju i praćenje najnovijih dostignuća veterinarske nauke, svojim pacijentima garantuje tretman na najvišem profesionalnom nivou.</p>
+        <p style="font-size: 16px; line-height: 1.65; color: color-mix(in srgb, var(--color-text) 82%, transparent);">Ambulanta WINNY VET raspolaže savremenom dijagnostičkom opremom, koja omogućava pouzdanu dijagnostiku i efikasno lečenje. U sklopu ambulante nalaze se:</p>
+
+        <ul style="list-style: none; margin: var(--space-4) 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px;">
+          <sc-for list="{{ aboutEquipment }}" as="e" hint-placeholder-count="5">
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 15px; line-height: 1.5; color: color-mix(in srgb, var(--color-text) 82%, transparent);">
+              <i data-lucide="check" style="width: 18px; height: 18px; flex: none; margin-top: 2px; color: var(--color-accent-700); stroke-width: 2;"></i>
+              <span><strong style="font-weight: 600; color: var(--color-text);">{{ e.name }}</strong> {{ e.desc }}</span>
+            </li>
+          </sc-for>
+        </ul>
+
+        <p style="font-size: 16px; line-height: 1.65; margin-top: var(--space-4); color: color-mix(in srgb, var(--color-text) 82%, transparent);">Pored kurativne medicine, poseban akcenat stavljamo na preventivnu zaštitu i edukaciju vlasnika.</p>
+        <p style="font-family: var(--font-heading); font-weight: 600; font-size: 17px; line-height: 1.4; margin-top: var(--space-4); color: var(--color-accent-700);">Zdravlje vašeg ljubimca - naša je profesionalna obaveza!</p>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: var(--space-3); margin-top: var(--space-6);">
           <sc-for list="{{ aboutStats }}" as="a" hint-placeholder-count="3">
@@ -256,26 +268,12 @@
       <div style="max-width: 640px; margin-bottom: var(--space-8);">
         <h6 style="color: var(--color-accent-700); margin-bottom: var(--space-2);">Galerija</h6>
         <h2 style="font-size: clamp(28px, 3.5vw, 38px);">Zavirite u Winny Vet</h2>
-        <p style="font-size: 16px; color: color-mix(in srgb, var(--color-text) 75%, transparent);">Naš prostor, oprema i - najvažnije - srećni ljubimci koji nam se vraćaju sa osmehom (i mahanjem repa).</p>
+        <p style="font-size: 16px; color: color-mix(in srgb, var(--color-text) 75%, transparent);">Pogledajte našu opremu i tim na delu - dijagnostika, laboratorija i svakodnevna briga o vašim ljubimcima.</p>
       </div>
 
-      <h4 style="font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: var(--space-4);">Prostor i oprema</h4>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-4); margin-bottom: var(--space-8);">
-        <sc-for list="{{ gallerySpace }}" as="g" hint-placeholder-count="3">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-4);">
+        <sc-for list="{{ gallery }}" as="g" hint-placeholder-count="6">
           <figure class="wv-gal wv-reveal" style="margin: 0; aspect-ratio: 4/3;">
-            <image-slot id="{{ g.slot }}" shape="rect" fit="cover" src="{{ g.src }}" placeholder="{{ g.label }}"></image-slot>
-            <span class="wv-gal-ov">
-              <span class="wv-gal-zoom"><i data-lucide="zoom-in" style="width: 20px; height: 20px; stroke-width: 1.5;"></i></span>
-              <span class="wv-gal-cap">{{ g.label }}</span>
-            </span>
-          </figure>
-        </sc-for>
-      </div>
-
-      <h4 style="font-size: 16px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-accent-700); margin-bottom: var(--space-4);">Srećni pacijenti</h4>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: var(--space-4);">
-        <sc-for list="{{ galleryPets }}" as="g" hint-placeholder-count="3">
-          <figure class="wv-gal wv-reveal" style="margin: 0; aspect-ratio: 1/1;">
             <image-slot id="{{ g.slot }}" shape="rect" fit="cover" src="{{ g.src }}" placeholder="{{ g.label }}"></image-slot>
             <span class="wv-gal-ov">
               <span class="wv-gal-zoom"><i data-lucide="zoom-in" style="width: 20px; height: 20px; stroke-width: 1.5;"></i></span>
@@ -590,6 +588,14 @@ class Component extends DCLogic {
         { icon: 'dna', title: 'Inseminacija', body: 'Stručna podrška u reprodukciji uz praćenje i savetovanje vlasnika.' },
       ],
 
+      aboutEquipment: [
+        { name: 'Biohemijski i imunohemijski analizator', desc: '— za analizu krvi i hormona.' },
+        { name: 'Hematološki analizator', desc: '— za kompletnu krvnu sliku.' },
+        { name: 'Ultrazvučni aparat najnovije generacije', desc: '— neinvazivna dijagnostika unutrašnjih organa za preciznu i brzu dijagnozu.' },
+        { name: 'Ultrazvučni aparat za uklanjanje zubnog kamenca', desc: '.' },
+        { name: 'Mikroskop', desc: '— za citološku i parazitološku dijagnostiku.' },
+      ],
+
       aboutStats: [
         { num: '5+', label: 'godina iskustva' },
         { num: '500+', label: 'zbrinutih ljubimaca' },
@@ -602,16 +608,15 @@ class Component extends DCLogic {
         { slot: 'wv-team-3', photo: 'Fotografija tehničara', name: 'Veterinarski tehničar', role: 'Nega i podrška', bio: 'Brine o udobnosti pacijenata i vodi vas kroz svaki korak posete.' },
       ],
 
-      gallerySpace: [
-        { slot: 'wv-g-space-1', src: 'assets/oprema-1.jpg', label: 'Veterinarski ultrazvuk' },
-        { slot: 'wv-g-space-2', src: 'assets/oprema-2.jpg', label: 'Biohemijski analizator' },
-        { slot: 'wv-g-space-3', src: 'assets/oprema-3.jpg', label: 'Hematološki analizator' },
-        { slot: 'wv-g-space-4', src: 'assets/oprema-4.jpg', label: 'Laboratorijski mikroskop' },
-      ],
-      galleryPets: [
-        { slot: 'wv-g-pet-1', src: 'assets/pacijent-1.jpg', label: 'Nežan pregled' },
-        { slot: 'wv-g-pet-2', src: 'assets/pacijent-2.webp', label: 'Pod našom negom' },
-        { slot: 'wv-g-pet-3', src: 'assets/pacijent-3.webp', label: 'Oporavak nakon zahvata' },
+      gallery: [
+        { slot: 'wv-g-1', src: 'assets/galerija-1.jpg', label: 'Ultrazvučni pregled' },
+        { slot: 'wv-g-2', src: 'assets/galerija-2.jpg', label: 'Ultrazvučna dijagnostika' },
+        { slot: 'wv-g-3', src: 'assets/galerija-3.jpg', label: 'Pregled stetoskopom' },
+        { slot: 'wv-g-4', src: 'assets/galerija-4.jpg', label: 'Hematološki analizator' },
+        { slot: 'wv-g-5', src: 'assets/galerija-5.jpg', label: 'Laboratorijski mikroskop' },
+        { slot: 'wv-g-6', src: 'assets/galerija-6.jpg', label: 'Analiza pod mikroskopom' },
+        { slot: 'wv-g-7', src: 'assets/galerija-7.jpg', label: 'Priprema uzorka' },
+        { slot: 'wv-g-8', src: 'assets/galerija-8.jpg', label: 'Naš veterinar' },
       ],
 
       reviews: [
