@@ -47,9 +47,15 @@
   .wv-reveal.wv-in { opacity: 1; transform: none; }
   @media (max-width: 700px) { .wv-reveal, .wv-reveal.wv-l, .wv-reveal.wv-r, .wv-reveal.wv-up { transform: translateY(22px); } .wv-reveal.wv-in { transform: none; } }
   @media (prefers-reduced-motion: reduce) { .wv-reveal { opacity: 1 !important; transform: none !important; transition: none !important; } }
+  .wv-about-head-m { display: none; }
+  #wv-hero-m { display: none !important; position: absolute; inset: 0; width: 100%; height: 100%; }
   @media (max-width: 700px) {
-    #wv-hero::part(image) { object-position: 65% center !important; }
-    #pocetna [style*="wvKenBurns"] { transform-origin: 65% 45% !important; }
+    #pocetna [style*="wvKenBurns"] { transform-origin: 50% 45% !important; }
+    .wv-about-fig { width: 48% !important; margin-right: 16px !important; }
+    #wv-hero { display: none !important; }
+    #wv-hero-m { display: block !important; }
+    .wv-about-head-m { display: block !important; }
+    .wv-about-head-d { display: none !important; }
   }
 </style>
 </helmet>
@@ -119,7 +125,8 @@
     <!-- background image with Ken Burns -->
     <div style="position: absolute; inset: 0; z-index: -2; overflow: hidden;">
       <div style="position: absolute; inset: 0; transform-origin: 60% 40%; animation: wvKenBurns 22s ease-in-out infinite alternate;">
-        <image-slot id="wv-hero" shape="rect" fit="cover" src="assets/hero.png" placeholder="Pozadinska fotografija - veterinar sa ljubimcem / enterijer (pejzažna, visoka rezolucija)"></image-slot>
+        <image-slot id="wv-hero" class="wv-hero-d" shape="rect" fit="cover" src="assets/hero.png" placeholder="Pozadinska fotografija - veterinar sa ljubimcem / enterijer (pejzažna, visoka rezolucija)"></image-slot>
+        <image-slot id="wv-hero-m" class="wv-hero-m" shape="rect" fit="cover" src="assets/hero-mobile.png" placeholder="Pozadinska fotografija za mobilni - veterinar sa psom (uspravna)"></image-slot>
       </div>
     </div>
     <!-- dark gradient overlay -->
@@ -221,11 +228,15 @@
       var(--color-bg);">
     <div style="max-width: 1200px; margin: 0 auto;">
       <div class="wv-glass-panel wv-reveal wv-r" style="padding: clamp(24px, 3vw, 40px); border-radius: 24px; border: 1px solid color-mix(in srgb, #ffffff 55%, transparent); background: color-mix(in srgb, #ffffff 42%, transparent); backdrop-filter: blur(14px) saturate(140%); -webkit-backdrop-filter: blur(14px) saturate(140%); box-shadow: 0 10px 30px -12px color-mix(in srgb, var(--color-accent-900) 35%, transparent), inset 0 1px 0 color-mix(in srgb, #ffffff 60%, transparent);">
-        <figure class="wv-reveal wv-l" style="float: left; width: min(42%, 420px); margin: 6px clamp(24px, 3vw, 36px) 20px 0; aspect-ratio: 4/5; border-radius: 18px; overflow: hidden; border: 1px solid color-mix(in srgb, #ffffff 60%, transparent); box-shadow: 0 20px 48px -22px color-mix(in srgb, var(--color-accent-900) 55%, transparent); shape-outside: inset(0 round 18px);">
+        <div class="wv-about-head-m">
+          <h6 style="color: var(--color-accent-700); margin-bottom: var(--space-2);">O nama</h6>
+          <h2 style="font-size: clamp(28px, 3.5vw, 38px); margin-bottom: var(--space-4);">Savremena nega malih životinja, sa ljudskim pristupom</h2>
+        </div>
+        <figure class="wv-reveal wv-l wv-about-fig" style="float: left; width: min(42%, 420px); margin: 6px clamp(24px, 3vw, 36px) 20px 0; aspect-ratio: 4/5; border-radius: 18px; overflow: hidden; border: 1px solid color-mix(in srgb, #ffffff 60%, transparent); box-shadow: 0 20px 48px -22px color-mix(in srgb, var(--color-accent-900) 55%, transparent); shape-outside: inset(0 round 18px);">
           <image-slot id="wv-about" shape="rect" fit="cover" src="assets/o-nama.jpg" placeholder="Fotografija enterijera ambulante ili tima"></image-slot>
         </figure>
-        <h6 style="color: var(--color-accent-700); margin-bottom: var(--space-2);">O nama</h6>
-        <h2 style="font-size: clamp(28px, 3.5vw, 38px); margin-bottom: var(--space-4);">Savremena nega malih životinja, sa ljudskim pristupom</h2>
+        <h6 class="wv-about-head-d" style="color: var(--color-accent-700); margin-bottom: var(--space-2);">O nama</h6>
+        <h2 class="wv-about-head-d" style="font-size: clamp(28px, 3.5vw, 38px); margin-bottom: var(--space-4);">Savremena nega malih životinja, sa ljudskim pristupom</h2>
         <p style="font-size: 16px; line-height: 1.65; color: color-mix(in srgb, var(--color-text) 82%, transparent);">Veterinarska ambulanta WINNY VET pruža visokokvalitetnu veterinarsku zaštitu malih životinja u skladu sa savremenim standardima veterinarske medicine. Naša misija je da osiguramo pravovremenu, stručnu i humanu medicinsku negu svakom pacijentu.</p>
         <p style="font-size: 16px; line-height: 1.65; color: color-mix(in srgb, var(--color-text) 82%, transparent);">Ambulantu vodi dr Dušan Todorović, veterinar koji poseduje bogato kliničko iskustvo u oblasti interne medicine, hirurgije i dijagnostike malih životinja. Kroz kontinuiranu stručnu edukaciju i praćenje najnovijih dostignuća veterinarske nauke, svojim pacijentima garantuje tretman na najvišem profesionalnom nivou.</p>
         <p style="font-size: 16px; line-height: 1.65; color: color-mix(in srgb, var(--color-text) 82%, transparent);">Ambulanta WINNY VET raspolaže savremenom dijagnostičkom opremom, koja omogućava pouzdanu dijagnostiku i efikasno lečenje. U sklopu ambulante nalaze se:</p>
