@@ -57,6 +57,26 @@
     .wv-about-head-m { display: block !important; }
     .wv-about-head-d { display: none !important; }
   }
+  /* FAQ */
+  .wv-faq { overflow: hidden; }
+  .wv-faq-q { width: 100%; text-align: left; background: none; border: 0; cursor: pointer; display: flex; align-items: center; gap: 14px; padding: 20px clamp(18px,2.5vw,26px); font-family: var(--font-heading); font-weight: 600; font-size: clamp(16px,1.6vw,18px); line-height: 1.35; color: var(--color-text); }
+  .wv-faq-q:focus-visible { outline: 2px solid var(--color-accent); outline-offset: -2px; border-radius: 20px; }
+  .wv-faq-ic { width: 42px; height: 42px; flex: none; display: grid; place-items: center; border-radius: 12px; color: var(--color-accent-700); background: linear-gradient(145deg, color-mix(in srgb,#ffffff 60%,transparent), var(--color-accent-100)); border: 1px solid color-mix(in srgb,#ffffff 60%,transparent); box-shadow: inset 0 1px 0 color-mix(in srgb,#ffffff 70%,transparent); }
+  .wv-faq-chev { margin-left: auto; flex: none; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; color: var(--color-accent-700); background: color-mix(in srgb,#ffffff 55%,transparent); border: 1px solid color-mix(in srgb,#ffffff 60%,transparent); transition: transform 0.35s cubic-bezier(.2,.7,.3,1), background 0.25s ease; }
+  .wv-faq-q:hover .wv-faq-chev { background: var(--color-accent-200); }
+  .wv-faq.open .wv-faq-chev { transform: rotate(135deg); }
+  .wv-faq-a { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.4s cubic-bezier(.2,.7,.3,1); }
+  .wv-faq.open .wv-faq-a { grid-template-rows: 1fr; }
+  .wv-faq-a > div { overflow: hidden; min-height: 0; }
+  .wv-faq-a p { margin: 0 clamp(18px,2.5vw,26px) 22px calc(clamp(18px,2.5vw,26px) + 56px); font-size: 15px; line-height: 1.65; color: color-mix(in srgb, var(--color-text) 80%, transparent); }
+  .wv-faq-a p strong { font-weight: 600; color: var(--color-text); }
+  .wv-faq-hide { display: none !important; }
+  .wv-faq-search { display: flex; align-items: center; gap: 10px; padding: 0 16px; border-radius: 14px; border: 1px solid color-mix(in srgb,#ffffff 55%,transparent); background: color-mix(in srgb,#ffffff 50%,transparent); backdrop-filter: blur(10px) saturate(140%); -webkit-backdrop-filter: blur(10px) saturate(140%); box-shadow: inset 0 1px 0 color-mix(in srgb,#ffffff 65%,transparent); transition: border-color 0.25s ease, box-shadow 0.25s ease; }
+  .wv-faq-search:focus-within { border-color: var(--color-accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 22%, transparent); }
+  .wv-faq-search input { flex: 1 1 auto; min-width: 0; border: 0; background: none; outline: none; padding: 15px 0; font-size: 15px; color: var(--color-text); font-family: var(--font-body); }
+  .wv-faq-search input::placeholder { color: color-mix(in srgb, var(--color-text) 48%, transparent); }
+  .wv-faq-clear { flex: none; display: none; align-items: center; justify-content: center; width: 28px; height: 28px; border: 0; border-radius: 50%; cursor: pointer; color: var(--color-accent-700); background: color-mix(in srgb, var(--color-accent) 12%, transparent); }
+  .wv-faq-search.has-text .wv-faq-clear { display: inline-flex; }
 </style>
 </helmet>
 
@@ -353,6 +373,45 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section id="faq" style="scroll-margin-top: 80px; border-block: 1px solid var(--color-divider); background:
+      radial-gradient(55% 70% at 8% 6%, color-mix(in srgb, var(--color-accent-300) 48%, transparent), transparent 60%),
+      radial-gradient(50% 65% at 94% 96%, color-mix(in srgb, var(--color-accent-200) 55%, transparent), transparent 60%),
+      var(--color-surface);">
+    <div style="max-width: 940px; margin: 0 auto; padding: clamp(40px, 6vw, 72px) var(--space-6);">
+      <div style="max-width: 660px; margin-bottom: var(--space-6);">
+        <h6 style="color: var(--color-accent-700); margin-bottom: var(--space-2);">Česta pitanja</h6>
+        <h2 style="font-size: clamp(28px, 3.5vw, 38px);">Pitanja koja nam vlasnici najčešće postavljaju</h2>
+        <p style="font-size: 16px; color: color-mix(in srgb, var(--color-text) 75%, transparent);">Niste pronašli odgovor? <a href="tel:+381628712784" style="font-family: var(--font-heading); font-weight: 600;">Pozovite nas</a> - rado pomažemo.</p>
+      </div>
+
+      <!-- Search -->
+      <label id="wv-faq-search" class="wv-faq-search wv-reveal" style="margin-bottom: var(--space-6);">
+        <i data-lucide="search" style="width: 18px; height: 18px; flex: none; color: var(--color-accent-700); stroke-width: 1.5;"></i>
+        <input id="wv-faq-search-input" type="text" autocomplete="off" placeholder="Pretražite pitanja - npr. vakcina, čip, krv..." aria-label="Pretraga pitanja">
+        <button id="wv-faq-clear" class="wv-faq-clear" type="button" aria-label="Obriši pretragu">
+          <i data-lucide="x" style="width: 15px; height: 15px; stroke-width: 2;"></i>
+        </button>
+      </label>
+
+      <!-- Accordion list -->
+      <div id="wv-faq-list" style="display: flex; flex-direction: column; gap: var(--space-3);">
+        <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="4">
+          <div class="wv-feature wv-faq wv-reveal" style="padding: 0;">
+            <button class="wv-faq-q" type="button" aria-expanded="false">
+              <span class="wv-faq-ic"><i data-lucide="{{ f.icon }}" style="width: 22px; height: 22px; stroke-width: 1.5;"></i></span>
+              <span>{{ f.q }}</span>
+              <span class="wv-faq-chev"><i data-lucide="plus" style="width: 18px; height: 18px; stroke-width: 2;"></i></span>
+            </button>
+            <div class="wv-faq-a"><div>{{ f.a }}</div></div>
+          </div>
+        </sc-for>
+      </div>
+
+      <p id="wv-faq-empty" class="wv-faq-hide" style="text-align: center; padding: var(--space-6); font-size: 15px; color: color-mix(in srgb, var(--color-text) 65%, transparent);">Nema pitanja koja odgovaraju pretrazi. Pozovite nas na <a href="tel:+381628712784" style="font-family: var(--font-heading); font-weight: 600;">062 871 2784</a>.</p>
+    </div>
+  </section>
+
   <!-- KONTAKT -->
   <section id="kontakt" style="scroll-margin-top: 80px; background: var(--color-accent-900); color: var(--color-bg);">
     <div style="max-width: 1200px; margin: 0 auto; padding: clamp(40px, 6vw, 72px) var(--space-6);">
@@ -508,6 +567,7 @@ class Component extends DCLogic {
     this._onScroll();
 
     this._setupReveal();
+    this._setupFaq();
 
     this._icons();
   }
@@ -545,6 +605,45 @@ class Component extends DCLogic {
     els.forEach((el) => this._io.observe(el));
   }
 
+  _setupFaq() {
+    const root = document.querySelector('#dc-root') || document;
+    const list = root.querySelector('#wv-faq-list');
+    if (!list) return;
+    // Accordion: click a question to expand/collapse (multiple can stay open)
+    if (!this._faqClick) {
+      this._faqClick = (e) => {
+        const q = e.target.closest('.wv-faq-q');
+        if (!q || !list.contains(q)) return;
+        const item = q.closest('.wv-faq');
+        const open = item.classList.toggle('open');
+        q.setAttribute('aria-expanded', open ? 'true' : 'false');
+      };
+      list.addEventListener('click', this._faqClick);
+    }
+    // Search: filter questions + answers, diacritic-insensitive
+    const input = root.querySelector('#wv-faq-search-input');
+    const empty = root.querySelector('#wv-faq-empty');
+    const wrap = root.querySelector('#wv-faq-search');
+    if (input && !input._wired) {
+      input._wired = true;
+      const norm = (s) => (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\u0111/g, 'd');
+      const run = () => {
+        const qv = norm(input.value.trim());
+        if (wrap) wrap.classList.toggle('has-text', !!input.value);
+        let shown = 0;
+        list.querySelectorAll('.wv-faq').forEach((item) => {
+          const match = !qv || norm(item.textContent).includes(qv);
+          item.classList.toggle('wv-faq-hide', !match);
+          if (match) shown++;
+        });
+        if (empty) empty.classList.toggle('wv-faq-hide', shown !== 0);
+      };
+      input.addEventListener('input', run);
+      const clear = root.querySelector('#wv-faq-clear');
+      if (clear) clear.addEventListener('click', () => { input.value = ''; run(); input.focus(); });
+    }
+  }
+
   _icons() {
     if (window.lucide && window.lucide.createIcons) {
       try { window.lucide.createIcons(); } catch (e) {}
@@ -567,11 +666,19 @@ class Component extends DCLogic {
       showTop: this.state.showTop,
       scrollTop: () => window.scrollTo({ top: 0, behavior: 'smooth' }),
 
+      faqs: [
+        { icon: 'droplet', q: 'Kako da pripremim ljubimca za vađenje krvi / laboratorijske analize?', a: this._faqAnswer('Za većinu analiza krvi poželjno je da ljubimac bude <strong>natašte 8-12 sati</strong> (voda je dozvoljena). Izbegavajte veći napor i stres neposredno pre dolaska i dovedite ljubimca mirno, na povocu ili u transporteru. Ako se analizira urin ili feces, ponesite svež uzorak ako je moguće. Najbolje je zakazati jutarnji termin - rezultate većine analiza dobijate isti dan.') },
+        { icon: 'siren', q: 'Šta da radim u slučaju hitnog slučaja van radnog vremena?', a: this._faqAnswer('Odmah nas pozovite na <strong>062 871 2784</strong> - intervencije radimo i van radnog vremena, po pozivu. Ukratko opišite šta se dešava i simptome, ostanite mirni i ne dajite ljubimcu lekove za ljude na svoju ruku. Uputićemo vas šta da uradite do dolaska i spremamo se da vas primimo.') },
+        { icon: 'syringe', q: 'Kada je pravo vreme za prvu vakcinaciju šteneta / mačenceta?', a: this._faqAnswer('Prva vakcinacija se obično daje sa <strong>6-8 nedelja starosti</strong>, uz revakcinaciju na svake 3-4 nedelje do otprilike 16. nedelje, nakon čega sledi vakcina protiv besnila. Pre svake vakcine radimo kratak klinički pregled kako bismo bili sigurni da je ljubimac zdrav i spreman. Napravićemo vam i plan sa podsetnikom za naredne termine.') },
+        { icon: 'bug', q: 'Koliko često treba da sprovodim zaštitu od parazita (buve, krpelji, gliste)?', a: this._faqAnswer('Zaštitu od spoljašnjih parazita (buve i krpelji) preporučujemo <strong>tokom cele godine</strong>, a naročito u toplijim mesecima kada su krpelji najaktivniji. Dehelmintizaciju (tretman protiv crevnih glista) kod odraslih ljubimaca radimo <strong>na svaka 3 meseca</strong>, a kod mladih češće, po šemi. Na pregledu vam predlažemo konkretan preparat i raspored prema uzrastu, težini i načinu života vašeg ljubimca.') },
+      ],
+
       navLinks: [
         { href: '#pocetna', label: 'Početna' },
         { href: '#usluge', label: 'Usluge' },
         { href: '#o-nama', label: 'O nama' },
         { href: '#galerija', label: 'Galerija' },
+        { href: '#faq', label: 'Pitanja' },
         { href: '#kontakt', label: 'Kontakt' },
       ],
 
@@ -653,6 +760,10 @@ class Component extends DCLogic {
       bigStars: this._stars(22),
       cardStars: this._stars(16),
     };
+  }
+
+  _faqAnswer(html) {
+    return React.createElement('p', { dangerouslySetInnerHTML: { __html: html } });
   }
 
   _stars(size) {
