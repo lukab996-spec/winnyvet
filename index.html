@@ -118,7 +118,7 @@
       <a href="#pocetna" onClick="{{ closeMenu }}" style="display: flex; align-items: center; gap: 10px; margin-right: auto; text-decoration: none; color: inherit;">
         <img src="assets/logo.jpg" alt="Winny Vet logo" style="width: 48px; height: 48px; flex: none; border-radius: 50%; display: block;">
         <span style="line-height: 1;">
-          <span style="display: block; font-family: var(--font-heading); font-weight: 600; font-size: 20px; letter-spacing: -0.01em;">Winny Vet</span>
+          <span style="display: block; font-family: var(--font-heading); font-weight: 600; font-size: 20px; letter-spacing: 0.02em; text-transform: uppercase;">Winny Vet</span>
           <span style="display: block; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent-700);">Veterinarska ambulanta · Niš</span>
         </span>
       </a>
@@ -128,8 +128,8 @@
           <sc-for list="{{ navLinks }}" as="link" hint-placeholder-count="5">
             <a href="{{ link.href }}" style="color: inherit; text-decoration: none; font-size: 14px; letter-spacing: 0.01em;">{{ link.label }}</a>
           </sc-for>
-          <a class="btn btn-primary" href="tel:+381628712784" style="gap: 7px;">
-            <i data-lucide="phone" style="width: 15px; height: 15px;"></i> Zakaži pregled
+          <a class="btn btn-primary" href="#zakazivanje" style="gap: 7px;">
+            <i data-lucide="calendar-check" style="width: 15px; height: 15px;"></i> Zakaži pregled
           </a>
         </nav>
       </sc-if>
@@ -147,7 +147,10 @@
         <sc-for list="{{ navLinks }}" as="link" hint-placeholder-count="5">
           <a href="{{ link.href }}" onClick="{{ closeMenu }}" style="color: inherit; text-decoration: none; font-size: 16px; padding: 10px 0; border-bottom: 1px solid var(--color-divider);">{{ link.label }}</a>
         </sc-for>
-        <a class="btn btn-primary btn-block" href="tel:+381628712784" style="gap: 7px; margin-top: var(--space-3);">
+        <a class="btn btn-primary btn-block" href="#zakazivanje" onClick="{{ closeMenu }}" style="gap: 7px; margin-top: var(--space-3);">
+          <i data-lucide="calendar-check" style="width: 16px; height: 16px;"></i> Zakaži pregled
+        </a>
+        <a class="btn btn-secondary btn-block" href="tel:+381628712784" style="gap: 7px; margin-top: var(--space-2);">
           <i data-lucide="phone" style="width: 16px; height: 16px;"></i> Pozovite: 062 871 2784
         </a>
       </nav>
@@ -175,11 +178,11 @@
         <h1 style="color: #fff; font-size: clamp(40px, 7vw, 76px); line-height: 1.02; letter-spacing: -0.02em; margin: var(--space-4) 0 var(--space-4); text-wrap: balance; text-shadow: 0 2px 24px rgba(0,0,0,0.35);">Vrhunska briga za vašeg ljubimca, u srcu Niša.</h1>
         <p style="font-size: clamp(16px, 2vw, 21px); line-height: 1.6; max-width: 56ch; color: color-mix(in srgb, #ffffff 90%, transparent); text-shadow: 0 1px 12px rgba(0,0,0,0.3);">Savremena dijagnostika, nežan pristup i tim koji vaše pse i mačke doživljava kao članove porodice - od redovnih pregleda do ultrazvuka i hirurgije.</p>
         <div style="display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-8);">
-          <a class="btn btn-primary" href="tel:+381628712784" style="gap: 9px; padding: 15px 28px; font-size: 16px;">
+          <a class="btn btn-primary" href="#zakazivanje" style="gap: 9px; padding: 15px 28px; font-size: 16px;">
             <i data-lucide="calendar-check" style="width: 18px; height: 18px;"></i> Zakaži pregled
           </a>
-          <a class="btn" href="#kontakt" style="gap: 9px; padding: 15px 28px; font-size: 16px; color: #fff; border: 1px solid color-mix(in srgb, #ffffff 60%, transparent); background: color-mix(in srgb, #ffffff 10%, transparent); backdrop-filter: blur(4px);">
-            <i data-lucide="map-pin" style="width: 18px; height: 18px;"></i> Kontakt
+          <a class="btn" href="tel:+381628712784" style="gap: 9px; padding: 15px 28px; font-size: 16px; color: #fff; border: 1px solid color-mix(in srgb, #ffffff 60%, transparent); background: color-mix(in srgb, #ffffff 10%, transparent); backdrop-filter: blur(4px);">
+            <i data-lucide="phone-call" style="width: 18px; height: 18px;"></i> Pozovite
           </a>
         </div>
         <div style="display: flex; flex-wrap: wrap; gap: var(--space-4) var(--space-6); margin-top: clamp(28px, 5vh, 56px);">
@@ -245,13 +248,30 @@
               <h3 style="font-size: 19px; margin: 0; line-height: 1.1;">{{ s.title }}</h3>
             </div>
             <p style="margin: 0; font-size: 14px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 72%, transparent);">{{ s.body }}</p>
-            <a class="wv-svc-cta" href="tel:+381628712784" style="margin-top: auto; padding-top: var(--space-2); display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-heading); font-weight: 600; font-size: 14px; color: var(--color-accent-700); text-decoration: none;">
+            <a class="wv-svc-cta" href="#zakazivanje" style="margin-top: auto; padding-top: var(--space-2); display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-heading); font-weight: 600; font-size: 14px; color: var(--color-accent-700); text-decoration: none;">
               Zakaži pregled <i data-lucide="arrow-right" style="width: 15px; height: 15px; stroke-width: 2;"></i>
             </a>
           </div>
         </sc-for>
       </div>
-      <p style="margin-top: var(--space-6); font-size: 14px; color: color-mix(in srgb, var(--color-text) 70%, transparent);">Niste sigurni šta je vašem ljubimcu potrebno? <a href="tel:+381628712784" style="font-family: var(--font-heading); font-weight: 600;">Pozovite nas</a> - rado savetujemo.</p>
+      <p style="margin-top: var(--space-6); font-size: 14px; color: color-mix(in srgb, var(--color-text) 70%, transparent);">Niste sigurni šta je vašem ljubimcu potrebno? <a href="#zakazivanje" style="font-family: var(--font-heading); font-weight: 600;">Pozovite nas</a> - rado savetujemo.</p>
+    </div>
+  </section>
+
+  <!-- ZAKAZIVANJE -->
+  <section id="zakazivanje" style="scroll-margin-top: 80px; border-block: 1px solid var(--color-divider); background:
+      radial-gradient(55% 70% at 92% 8%, color-mix(in srgb, var(--color-accent-300) 48%, transparent), transparent 60%),
+      radial-gradient(50% 65% at 6% 94%, color-mix(in srgb, var(--color-accent-200) 55%, transparent), transparent 60%),
+      var(--color-surface);">
+    <div style="max-width: 1100px; margin: 0 auto; padding: clamp(40px, 6vw, 72px) var(--space-6);">
+      <div style="max-width: 660px; margin-bottom: var(--space-6);">
+        <h6 style="color: var(--color-accent-700); margin-bottom: var(--space-2);">Zakazivanje</h6>
+        <h2 style="font-size: clamp(28px, 3.5vw, 38px);">Zakažite termin online</h2>
+        <p style="font-size: 16px; color: color-mix(in srgb, var(--color-text) 75%, transparent);">Izaberite datum i vreme koje vam odgovara - potvrdu dobijate odmah. Za hitne slučajeve i operacije nas <a href="tel:+381628712784" style="font-family: var(--font-heading); font-weight: 600;">pozovite direktno</a>.</p>
+      </div>
+      <div class="wv-reveal" style="background: color-mix(in srgb,#ffffff 50%,transparent); backdrop-filter: blur(10px) saturate(140%); -webkit-backdrop-filter: blur(10px) saturate(140%); border: 1px solid color-mix(in srgb,#ffffff 55%,transparent); border-radius: 18px; box-shadow: var(--shadow-md); padding: clamp(10px,2vw,20px); overflow: hidden;">
+        <div class="embedded-booking" data-url="https://winnyvet.trafft.com" data-query="&t=s&uuid=24c009e0-bebc-4120-8afd-9bf5b21f8b71" data-lang="sr" data-autoresize="0" data-showsidebar="1" data-autoscroll="1" data-showservices="0" style="min-width: 320px; height: 768px; width: 100%;"></div>
+      </div>
     </div>
   </section>
 
@@ -433,12 +453,17 @@
       <div style="display: flex; flex-wrap: wrap; gap: clamp(32px, 5vw, 64px);">
         <div style="flex: 1 1 320px; min-width: 300px;">
           <h6 style="color: var(--color-accent-300); margin-bottom: var(--space-2);">Kontakt i zakazivanje</h6>
-          <h2 style="font-size: clamp(30px, 4vw, 44px); color: var(--color-bg); margin-bottom: var(--space-4);">Zakažite pregled - jedan poziv je dovoljan</h2>
-          <p style="font-size: 16px; line-height: 1.6; color: color-mix(in srgb, #ffffff 82%, transparent); max-width: 50ch;">Termine zakazujemo telefonom kako bismo vam našli vreme koje vam najviše odgovara. Pozovite nas i rado ćemo odgovoriti na sva pitanja.</p>
+          <h2 style="font-size: clamp(30px, 4vw, 44px); color: var(--color-bg); margin-bottom: var(--space-4);">Zakažite pregled online</h2>
+          <p style="font-size: 16px; line-height: 1.6; color: color-mix(in srgb, #ffffff 82%, transparent); max-width: 50ch;">Izaberite termin koji vam odgovara direktno preko sajta - potvrdu dobijate odmah. Ako vam je lakše, rado ćemo odgovoriti i telefonom.</p>
 
-          <a class="btn" href="tel:+381628712784" style="background: var(--color-bg); color: var(--color-accent-900); border-color: var(--color-bg); gap: 9px; padding: 14px 24px; font-size: 16px; margin: var(--space-6) 0 var(--space-4);">
-            <i data-lucide="phone-call" style="width: 18px; height: 18px;"></i> 062 871 2784
-          </a>
+          <div style="display: flex; flex-wrap: wrap; gap: var(--space-3); margin: var(--space-6) 0 var(--space-4);">
+            <a class="btn" href="#zakazivanje" style="background: var(--color-bg); color: var(--color-accent-900); border-color: var(--color-bg); gap: 9px; padding: 14px 24px; font-size: 16px;">
+              <i data-lucide="calendar-check" style="width: 18px; height: 18px;"></i> Zakaži pregled
+            </a>
+            <a class="btn" href="tel:+381628712784" style="color: #fff; border: 1px solid color-mix(in srgb, #ffffff 55%, transparent); background: color-mix(in srgb, #ffffff 12%, transparent); gap: 9px; padding: 14px 24px; font-size: 16px;">
+              <i data-lucide="phone-call" style="width: 18px; height: 18px;"></i> 062 871 2784
+            </a>
+          </div>
 
           <div style="display: flex; flex-direction: column; gap: var(--space-4); margin-top: var(--space-4);">
             <div style="display: flex; align-items: flex-start; gap: 12px;">
@@ -489,7 +514,7 @@
     <div style="max-width: 1200px; margin: 0 auto; padding: var(--space-8) var(--space-6); display: flex; flex-wrap: wrap; gap: var(--space-6); align-items: center; justify-content: space-between;">
       <div style="display: flex; align-items: center; gap: 14px;">
         <img src="assets/logo.jpg" alt="Winny Vet logo" style="width: 44px; height: 44px; flex: none; border-radius: 50%; display: block;">
-        <span style="font-family: var(--font-heading); font-weight: 600; font-size: 18px;">Winny Vet</span>
+        <span style="font-family: var(--font-heading); font-weight: 600; font-size: 18px; letter-spacing: 0.02em; text-transform: uppercase;">Winny Vet</span>
         <span style="font-size: 13px; color: color-mix(in srgb, var(--color-text) 55%, transparent);">· Veterinarska ambulanta, Niš</span>
         <a href="https://instagram.com/winnyvet" target="_blank" rel="noopener" aria-label="Winny Vet na Instagramu" title="@winnyvet" style="display: inline-grid; place-items: center; width: 40px; height: 40px; flex: none; border-radius: 50%; color: #fff; background: var(--color-accent); border: 1px solid var(--color-accent-700); text-decoration: none;">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -583,6 +608,7 @@ class Component extends DCLogic {
 
     this._setupReveal();
     this._setupFaq();
+    this._loadBooking();
 
     this._icons();
   }
@@ -618,6 +644,18 @@ class Component extends DCLogic {
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
     els.forEach((el) => this._io.observe(el));
+  }
+
+  _loadBooking() {
+    // Trafft booking embed: inject the vendor script once; it reads the
+    // data-* attributes of any .embedded-booking div present on load.
+    if (document.getElementById('trafft-embed-js')) return;
+    const s = document.createElement('script');
+    s.id = 'trafft-embed-js';
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = 'https://winnyvet.trafft.com/embed.js';
+    document.body.appendChild(s);
   }
 
   _setupFaq() {
@@ -690,6 +728,7 @@ class Component extends DCLogic {
       navLinks: [
         { href: '#pocetna', label: 'Početna' },
         { href: '#usluge', label: 'Usluge' },
+        { href: '#zakazivanje', label: 'Zakazivanje' },
         { href: '#o-nama', label: 'O nama' },
         { href: '#galerija', label: 'Galerija' },
         { href: '#faq', label: 'Pitanja' },
